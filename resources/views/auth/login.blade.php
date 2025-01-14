@@ -23,11 +23,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo" required>
+                            <input value="admin@example.com" type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo" required>
                         </div>
                         <div class="form-group">
                             <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                            <input value="admin" type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
                             <i class="fas fa-sign-in-alt"></i> Iniciar sesión

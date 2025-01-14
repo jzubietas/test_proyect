@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet">
+    {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">--}}
+    <link href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    {{--<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">--}}
+    {{-- <link href="{{ asset('plugins/datatables/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> --}}
+
+    <link href="{{ asset('plugins/datatables/css/dataTables.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/datatables/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    
+
 
     @stack('styles')
     <style>
@@ -130,20 +138,24 @@
     </div>
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('plugins/jquery/jquery.min.js?v=3.7.1') }}"></script>
+    
+    <script src="{{ asset('plugins/datatables/js/dataTables.min.js?v=4') }}"></script> 
+    {{-- <script src="{{ asset('plugins/datatables/js/dataTables.bootstrap4.min.js?v=4') }}"></script>--}}
+    {{--<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>--}}
+    {{-- <script src="{{ asset('plugins/popper/popper.min.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js?v=4.5.3') }}"></script>
     
 
     @stack('scripts')
     <script>
-        $.extend(true, $.fn.dataTable.defaults, {
+        /*$.extend(true, $.fn.dataTable.defaults, {
             language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json'  // URL del archivo JSON de idioma español
+                url: '{{ asset('json/datatables/Spanish.json') }}'  // URL del archivo JSON de idioma español https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json
             },
             dom: '<"top"flip>rt<"bottom"ip><"clear">',
-        });
+        });*/
     </script>
 
     <script>
